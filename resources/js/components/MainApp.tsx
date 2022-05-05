@@ -1,11 +1,17 @@
 import React from "react";
+import { BrowserRouter, Routes } from "react-router-dom";
 
-const App = () => {
+const MainApp = () => {
   return (
     <>
       <h1>Hello Minh Duong</h1>
+      <BrowserRouter>
+        <Routes>
+          
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
 
-export default App;
+export default MainApp;
