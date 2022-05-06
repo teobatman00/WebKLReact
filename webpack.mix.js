@@ -12,4 +12,8 @@ const mix = require('laravel-mix');
  */
 
 mix.ts("resources/js/app.tsx","public/js").react()
-.disableNotifications();
+    .disableNotifications()
+    .browserSync({
+      proxy: "localhost:8000",
+      browser: "chrome.exe"
+    });

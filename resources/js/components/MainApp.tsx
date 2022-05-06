@@ -1,13 +1,16 @@
 import React from "react";
-import { BrowserRouter, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AdminView from "./views/AdminView";
+import ClientView from "./views/ClientView";
+import "antd/dist/antd.css";
 
 const MainApp = () => {
   return (
     <>
-      <h1>Hello Minh Duong</h1>
       <BrowserRouter>
         <Routes>
-          
+          <Route path="*" element={<ClientView />} />
+          <Route path="/admin/*" element={<AdminView />} />
         </Routes>
       </BrowserRouter>
     </>
