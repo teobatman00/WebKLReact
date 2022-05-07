@@ -34,6 +34,12 @@ const ClientNavbar = () => {
           <span>{navItem[1].label}</span>
         </NavLink>
       </Menu.Item>
+      <Menu.Item key={navItem[1].to}>
+        <NavLink to={navItem[1].to}>
+          <span>{navItem[1].label}</span>
+        </NavLink>
+      </Menu.Item>
+
     </Menu>
   </>);
 }
