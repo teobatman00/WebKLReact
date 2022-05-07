@@ -20,6 +20,7 @@ export function Mobile ({children}: any) {
   return isMobile ? children : null
 }
 
+
 const MainApp = () => {
   return (
     <>
