@@ -1,12 +1,30 @@
-import React from "react";
-import { Row, Col, Divider, List, Typography } from "antd";
-import { HomeOutlined } from "@ant-design/icons";
+import React, { ReactNode } from "react";
+import { Row, Col, Divider, List, Typography, Space } from "antd";
+import { AimOutlined, HomeOutlined, MailOutlined, PhoneOutlined } from "@ant-design/icons";
+import { navItem } from "../../views/ClientView";
+import { Link } from "react-router-dom";
 
 interface FooterListItem {
-  title: string,
-  url: string,
-  icon?:JSX.Element
+  title?: string,
+  url?: string,
+  icon?: ReactNode
 }
+
+
+const contact:Array<FooterListItem> = [
+  {
+    title: '341 Cao Đạt, P1, Q5',
+    icon: <AimOutlined />
+  },
+  {
+    title: 'minhduongb97@gmail.com',
+    icon: <MailOutlined />
+  },
+  {
+    title: '0916 310 208',
+    icon: <PhoneOutlined />
+  }
+];
 
 const ClientFooter = () => {
 
@@ -19,29 +37,55 @@ const ClientFooter = () => {
   ];
 
   return (<>
-    <Row style={{ padding: '60px 40px', background: '#001529' }}>
-      <Col span={6}>
-        <Divider orientation="center" style={{color: 'white', borderBottom: '1px solid white', paddingBottom: '20px'}}>Default Size</Divider>
-        <List
-          dataSource={data}
-          renderItem={item => (
-            <List.Item style={{ border: 'none', color:'white'}}>
-              <Typography.Text style={{color:'white'}}><HomeOutlined /></Typography.Text> 
-              {item}
-            </List.Item>
-          )}
-        />
-      </Col>
-      <Col span={6}>
-        Column
-      </Col>
-      <Col span={6}>
-        Column
-      </Col>
-      <Col span={6}>
-        Column
-      </Col>
-    </Row>
+    <div style={{ background: '#001529', padding: '60px 40px' }}>
+      <Row gutter={{ lg: 30 }}>
+        <Col span={6}>
+          <Divider orientation="center" style={{ color: 'white', borderBottom: '1px solid white', paddingBottom: '20px' }}>Liên hệ với chúng tôi</Divider>
+          <List
+            dataSource={contact}
+            renderItem={item => (
+              <List.Item style={{ border: 'none', color: 'white' }}>
+                <Space>
+                  <Typography.Text style={{ color: 'white' }}>{item.icon} </Typography.Text>
+                  {item.title}
+                </Space>
+              </List.Item>
+            )}
+          />
+        </Col>
+        <Col span={6}>
+          <Divider orientation="center" style={{ color: 'white', borderBottom: '1px solid white', paddingBottom: '20px' }}>Thông tin</Divider>
+          <List
+            dataSource={navItem}
+            renderItem={item => (
+              <List.Item style={{ border: 'none', cursor: 'pointer' }}
+              >
+                <Link to={item.to}>{item.label}</Link>
+              </List.Item>
+            )}
+          />
+        </Col>
+        <Col span={6}>
+          <Divider orientation="center" style={{ color: 'white', borderBottom: '1px solid white', paddingBottom: '20px' }}>Điều khoản - Chính sách</Divider>
+          <List
+            dataSource={data}
+            renderItem={item => (
+              <List.Item style={{ border: 'none', color: 'white' }}>
+                <Space>
+                  <Typography.Text style={{ color: 'white' }}><HomeOutlined /></Typography.Text>
+                  {item}
+                </Space>
+              </List.Item>
+            )}
+          />
+        </Col>
+        <Col span={6}>
+          <Divider orientation="center" style={{ color: 'white', borderBottom: '1px solid white', paddingBottom: '20px' }}>Google Map</Divider>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1959.8776006519927!2d106.68135784095455!3d10.75334042261864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752fe89ef15a5f%3A0x127c6e03ca94934c!2zQ2h1bmcgQ8awIFBow7pjIFRoaW5o!5e0!3m2!1svi!2s!4v1652020379208!5m2!1svi!2s"
+          style={{border: '0', width: '100%', height: '250'}} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+        </Col>
+      </Row>
+    </div>
     <div style={{
       padding: '30px 40px',
       textAlign: 'center',

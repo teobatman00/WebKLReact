@@ -15,23 +15,23 @@ export const clientRouterPath = {
   service: "/service"
 }
 
-const ClientView = () => {
+export const navItem = [
+  {
+    to: clientRouterPath.home,
+    label:"Trang chu",
+    icon: <HomeOutlined />
+  },
+  {
+    to: clientRouterPath.introduction,
+    label: "Giới thiệu"
+  },
+  {
+    to: clientRouterPath.service,
+    label: "Dịch vụ"
+  }
+];
 
-  const navItem = [
-    {
-      to: clientRouterPath.home,
-      label:"Trang chu",
-      icon: <HomeOutlined />
-    },
-    {
-      to: clientRouterPath.introduction,
-      label: "Giới thiệu"
-    },
-    {
-      to: clientRouterPath.service,
-      label: "Dịch vụ"
-    }
-  ];
+const ClientView = () => {
 
   return (<>
       <HelmetProvider>
@@ -55,7 +55,7 @@ const ClientView = () => {
               </Routes>
             </div>
           </Content>
-          <Footer>
+          <Footer style={{paddingBottom:'0'}}>
             <ClientFooter />
           </Footer>
         </Layout>
