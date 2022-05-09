@@ -3,6 +3,7 @@ import { Row, Col, Divider, List, Typography, Space } from "antd";
 import { AimOutlined, HomeOutlined, MailOutlined, PhoneOutlined } from "@ant-design/icons";
 import { navItem } from "../../views/ClientView";
 import { Link } from "react-router-dom";
+import styles from './ClientFooter.css';
 
 interface FooterListItem {
   title?: string,
@@ -12,6 +13,7 @@ interface FooterListItem {
 
 
 const contact:Array<FooterListItem> = [
+
   {
     title: '341 Cao Đạt, P1, Q5',
     icon: <AimOutlined />
