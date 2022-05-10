@@ -1,9 +1,9 @@
 import React, { ReactNode } from "react";
-import { Row, Col, Divider, List, Typography, Space } from "antd";
+import { Row, Col, Divider, List, Typography, Space, ColProps } from "antd";
 import { AimOutlined, HomeOutlined, MailOutlined, PhoneOutlined } from "@ant-design/icons";
 import { navItem } from "../../views/ClientView";
 import { Link } from "react-router-dom";
-import styles from './ClientFooter.css';
+import styles from './ClientFooter.module.css';
 
 interface FooterListItem {
   title?: string,
@@ -28,20 +28,39 @@ const contact:Array<FooterListItem> = [
   }
 ];
 
-const ClientFooter = () => {
+const policy:Array<FooterListItem> =[
+  {
+    title: "Chính sách bảo hành",
+    url: "/"
+  },
+  {
+    title: "Chính sách bảo mật",
+    url: "/"
+  },
+  {
+    title: "Chính sách hoàn tiền",
+    url: "/"
+  }
+];
 
-  const data = [
-    'Racing car sprays burning fuel into crowd.',
-    'Japanese princess to wed commoner.',
-    'Australian walks 100km after outback crash.',
-    'Man charged over missing wedding girl.',
-    'Los Angeles battles huge wildfires.',
-  ];
+const colProps: ColProps = {
+  xs: {
+    span: 24
+  },
+  md: {
+    span: 12
+  },
+  lg: {
+    span: 6
+  }
+}
+
+const ClientFooter = () => {
 
   return (<>
     <div style={{ background: '#001529', padding: '60px 40px' }}>
-      <Row gutter={{ lg: 30 }}>
-        <Col span={6}>
+      <Row gutter={{ lg: 40, md: 20, xs:0}}>
+        <Col {...colProps}>
           <Divider orientation="center" style={{ color: 'white', borderBottom: '1px solid white', paddingBottom: '20px' }}>Liên hệ với chúng tôi</Divider>
           <List
             dataSource={contact}
@@ -55,33 +74,30 @@ const ClientFooter = () => {
             )}
           />
         </Col>
-        <Col span={6}>
+        <Col {...colProps}>
           <Divider orientation="center" style={{ color: 'white', borderBottom: '1px solid white', paddingBottom: '20px' }}>Thông tin</Divider>
           <List
             dataSource={navItem}
             renderItem={item => (
-              <List.Item style={{ border: 'none', cursor: 'pointer' }}
+              <List.Item style={{ border: 'none'}}
               >
-                <Link to={item.to}>{item.label}</Link>
+                <Link to={item.to} className={styles.item_link}>{item.label}</Link>
               </List.Item>
             )}
           />
         </Col>
-        <Col span={6}>
+        <Col {...colProps}>
           <Divider orientation="center" style={{ color: 'white', borderBottom: '1px solid white', paddingBottom: '20px' }}>Điều khoản - Chính sách</Divider>
           <List
-            dataSource={data}
+            dataSource={policy}
             renderItem={item => (
               <List.Item style={{ border: 'none', color: 'white' }}>
-                <Space>
-                  <Typography.Text style={{ color: 'white' }}><HomeOutlined /></Typography.Text>
-                  {item}
-                </Space>
+                {item.url && <Link to={item.url} className={styles.item_link}> {item.title} </Link>}
               </List.Item>
             )}
           />
         </Col>
-        <Col span={6}>
+        <Col {...colProps}>
           <Divider orientation="center" style={{ color: 'white', borderBottom: '1px solid white', paddingBottom: '20px' }}>Google Map</Divider>
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1959.8776006519927!2d106.68135784095455!3d10.75334042261864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752fe89ef15a5f%3A0x127c6e03ca94934c!2zQ2h1bmcgQ8awIFBow7pjIFRoaW5o!5e0!3m2!1svi!2s!4v1652020379208!5m2!1svi!2s"
           style={{border: '0', width: '100%', height: '250'}} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>

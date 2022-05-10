@@ -34,8 +34,8 @@ const HomePage = () => {
 
   return (<>
     <MetaTags
-      title="Trang chủ"
-      description="Trang chủ"
+      title="Luận văn Hải Minh - Trang chủ"
+      description="Luận văn Hải Minh - Trang chủ"
       keyword="Luận văn, Trang chủ"
       permalink={clientRouterPath.home}
       type="Trang chủ luận văn"

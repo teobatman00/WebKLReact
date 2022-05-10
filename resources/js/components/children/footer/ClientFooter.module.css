@@ -1,0 +1,8 @@
+.item_link{
+  color: white;
+  cursor: pointer;
+}
+
+.item_link:hover {
+  color: aqua !important;
+}
