@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tags;
-use App\Http\Requests\StoreTagsRequest;
-use App\Http\Requests\UpdateTagsRequest;
+use App\Http\Requests\Tag\StoreTagsRequest;
+use App\Http\Requests\Tag\UpdateTagsRequest;
 
 class TagsController extends Controller
 {

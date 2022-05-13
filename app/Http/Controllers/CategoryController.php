@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Category\UpdateCategoryRequest;
 use App\Models\Category;
-use App\Http\Requests\StoreCategoryRequest;
-use App\Http\Requests\UpdateCategoryRequest;
+use App\Http\Requests\Category\StoreCategoryRequest;
 
 class CategoryController extends Controller
 {
