@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tags;
-use App\Http\Requests\Tag\StoreTagsRequest;
-use App\Http\Requests\Tag\UpdateTagsRequest;
+use Illuminate\Http\Request;
 
-class TagsController extends Controller
+class PostMetaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +29,10 @@ class TagsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreTagsRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreTagsRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -42,10 +40,10 @@ class TagsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Tags  $tags
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Tags $tags)
+    public function show($id)
     {
         //
     }
@@ -53,10 +51,10 @@ class TagsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Tags  $tags
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tags $tags)
+    public function edit($id)
     {
         //
     }
@@ -64,11 +62,11 @@ class TagsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateTagsRequest  $request
-     * @param  \App\Models\Tags  $tags
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateTagsRequest $request, Tags $tags)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -76,10 +74,10 @@ class TagsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Tags  $tags
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tags $tags)
+    public function destroy($id)
     {
         //
     }
