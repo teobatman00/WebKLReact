@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Models\User;
+
 use App\Repositories\Interfaces\BaseRepositoryInterface;
 use Illuminate\Database\Eloquent\Model;
 
@@ -18,9 +18,9 @@ abstract class BaseRepository implements BaseRepositoryInterface
         $this->setModel();
     }
 
-    public abstract function getModel();
+    public abstract function getModel(): string;
 
-    public function setModel()
+    public function setModel(): void
     {
         $this->model = app()->make(
             $this->getModel()
@@ -53,6 +53,12 @@ abstract class BaseRepository implements BaseRepositoryInterface
         
     }
 
-    
+    public function delete($id) {
+        $result = $this->findById($id);
+        if ($result) {
+            $result->delete();
+            return $result;
+        }
+    }
 
 }
