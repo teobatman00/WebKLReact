@@ -2,7 +2,6 @@
 
 namespace App\Repositories;
 
-
 use App\Repositories\Interfaces\BaseRepositoryInterface;
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,13 +11,13 @@ abstract class BaseRepository implements BaseRepositoryInterface
      * @var Model
      */
     protected $model;
-    
+
     public function __construct()
     {
         $this->setModel();
     }
 
-    public abstract function getModel(): string;
+    abstract public function getModel(): string;
 
     public function setModel(): void
     {
@@ -45,20 +44,18 @@ abstract class BaseRepository implements BaseRepositoryInterface
     public function update($id, array $attribute)
     {
         $result = $this->findById($id);
-        if ($result)
-        {
+        if ($result) {
             $result->update($attribute);
             return $result;
         }
-        
     }
 
-    public function delete($id) {
+    public function delete($id)
+    {
         $result = $this->findById($id);
         if ($result) {
             $result->delete();
             return $result;
         }
     }
-
 }
