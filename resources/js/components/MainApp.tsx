@@ -20,6 +20,11 @@ export function Mobile ({children}: any) {
   return isMobile ? children : null
 }
 
+export function TabletAndAbove({children}: any) {
+  const isTabletAndAbove = useMediaQuery({minWidth: 768});
+  return isTabletAndAbove ? children: null;
+}
+
 
 const MainApp = () => {
   return (

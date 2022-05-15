@@ -1,0 +1,7 @@
+.list_item a {
+    color: black;
+}
+
+.list_item:hover a {
+    color: rgb(0, 102, 255) !important;
+}
