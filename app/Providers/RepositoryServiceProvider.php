@@ -13,7 +13,7 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(
+        $this->app->bind(
             \App\Repositories\Interfaces\PostRepositoryInterface::class,
             \App\Repositories\PostRepository::class
         );
