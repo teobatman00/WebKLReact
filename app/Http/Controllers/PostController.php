@@ -35,7 +35,6 @@ class PostController extends Controller
      */
     public function store(PostCreateRequest $request)
     {
-        
     }
 
     /**

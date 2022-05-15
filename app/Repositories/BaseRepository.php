@@ -2,7 +2,6 @@
 
 namespace App\Repositories;
 
-
 use App\Models\Post;
 use App\Repositories\Interfaces\BaseRepositoryInterface;
 use Illuminate\Contracts\Container\BindingResolutionException;
@@ -55,8 +54,9 @@ abstract class BaseRepository implements BaseRepositoryInterface
     public function createOrUpdateMultipleFromArray(array $data, bool $saveMissingModelFillableAttributesToNull = true): Collection
     {
         $models = new Collection();
-        foreach ($data as $instanceData)
+        foreach ($data as $instanceData) {
             $models->push($this->createOrUpdateFromArray($instanceData, $saveMissingModelFillableAttributesToNull));
+        }
         return $models;
     }
 
@@ -186,8 +186,9 @@ abstract class BaseRepository implements BaseRepositoryInterface
 
     protected function exceptAttributesFromRequest(array $attributeToExcept = [])
     {
-        if ($this->exceptDefaultAttributes)
+        if ($this->exceptDefaultAttributes) {
             $attributeToExcept = array_merge($this->defaultAttributesToExcept, $attributeToExcept);
+        }
         $this->request->replace($this->request->except($attributeToExcept));
     }
 
@@ -208,8 +209,7 @@ abstract class BaseRepository implements BaseRepositoryInterface
 
     protected function getModel(): Model
     {
-        if($this->model instanceof Model)
-        {
+        if ($this->model instanceof Model) {
             return $this->model;
         }
         throw new ModelNotFoundException(
@@ -217,5 +217,4 @@ abstract class BaseRepository implements BaseRepositoryInterface
             . 'namespace to use this feature.'
         );
     }
-
 }
