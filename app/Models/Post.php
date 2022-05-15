@@ -18,15 +18,16 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class Post extends Model
 {
-    use HasFactory, Uuids;
+    use HasFactory;
+    use Uuids;
 
 
-    public function tag() : BelongsToMany
+    public function tag(): BelongsToMany
     {
         return $this->belongsToMany(Tag::class);
     }
 
-    public function category() : BelongsToMany
+    public function category(): BelongsToMany
     {
         return $this->belongsToMany(Category::class);
     }
@@ -40,5 +41,4 @@ class Post extends Model
     {
         return $this->hasMany(Comment::class);
     }
-
 }

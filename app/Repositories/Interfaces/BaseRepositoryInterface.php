@@ -13,5 +13,4 @@ interface BaseRepositoryInterface
     public function update($id, array $attribute);
 
     public function delete($id);
-    
 }

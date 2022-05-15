@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Traits;
 
 use Str;
@@ -10,8 +11,7 @@ trait Uuids
         parent::boot();
 
         $creationCallback = function ($model) {
-            if (empty($model->{$model->getKeyName()}))
-            {
+            if (empty($model->{$model->getKeyName()})) {
                 $model->{$model->getKeyName()} = Str::uuid()->toString();
             }
         };
@@ -24,7 +24,7 @@ trait Uuids
         return false;
     }
 
-    public function getKeyType(): string 
+    public function getKeyType(): string
     {
         return 'string';
     }
