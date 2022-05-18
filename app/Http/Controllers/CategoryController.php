@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Category\UpdateCategoryRequest;
+use App\Http\Category\UpdateCategoryFormRequest;
 use App\Models\Category;
-use App\Http\Requests\Category\StoreCategoryRequest;
+use App\Http\Requests\Category\StoreCategoryFormRequest;
 
 class CategoryController extends Controller
 {
@@ -34,7 +34,7 @@ class CategoryController extends Controller
      * @param  \App\Http\Requests\StoreCategoryRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCategoryRequest $request)
+    public function store(StoreCategoryFormRequest $request)
     {
         //
     }
@@ -68,7 +68,7 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCategoryRequest $request, Category $category)
+    public function update(UpdateCategoryFormRequest $request, Category $category)
     {
         //
     }

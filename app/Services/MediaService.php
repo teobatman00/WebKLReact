@@ -6,6 +6,7 @@ use App\Enums\FileType;
 use App\Services\Interfaces\MediaServiceInterface;
 use App\Traits\ApiResponser;
 use App\Traits\GlobalConstant;
+use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Log;
@@ -16,7 +17,7 @@ class MediaService implements MediaServiceInterface
     use ApiResponser, GlobalConstant;
 
     /**
-     * @throws \Illuminate\Contracts\Container\BindingResolutionException
+     * @throws BindingResolutionException
      */
     public function getMediaFile(string $bucketName, string $objectName) {
         if (! Storage::disk('public')->exists($bucketName.'/'.$objectName)){
