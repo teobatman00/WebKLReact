@@ -19,9 +19,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class Category extends Model
 {
-    use HasFactory, Uuids;
-   
-    public function post() : BelongsToMany
+    use HasFactory;
+    use Uuids;
+
+    public function post(): BelongsToMany
     {
         return $this->belongsToMany(Post::class);
     }
@@ -35,5 +36,4 @@ class Category extends Model
     {
         return $this->hasMany(Category::class, "parent_id");
     }
-
 }
