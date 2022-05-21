@@ -7,7 +7,7 @@ use App\Dto\Request\Post\PostUpdateRequest;
 use App\Http\Requests\Post\PostCreateFormRequest;
 use App\Http\Requests\Post\PostUpdateFormRequest;
 use App\Services\Interfaces\PostServiceInterface;
-use App\Traits\ApiResponser;
+use App\Traits\ApiResponse;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -15,7 +15,7 @@ use Spatie\DataTransferObject\Exceptions\UnknownProperties;
 
 class PostController extends Controller
 {
-    use ApiResponser;
+    use ApiResponse;
     private PostServiceInterface $postService;
 
 

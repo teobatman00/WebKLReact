@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests\Post;
 
-use App\Traits\ApiResponser;
+use App\Traits\ApiResponse;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
@@ -10,7 +10,7 @@ use Illuminate\Validation\ValidationException;
 
 class PostCreateFormRequest extends FormRequest
 {
-    use ApiResponser;
+    use ApiResponse;
     /**
      * Determine if the user is authorized to make this request.
      *

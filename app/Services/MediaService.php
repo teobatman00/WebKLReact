@@ -4,7 +4,7 @@ namespace App\Services;
 
 use App\Enums\FileType;
 use App\Services\Interfaces\MediaServiceInterface;
-use App\Traits\ApiResponser;
+use App\Traits\ApiResponse;
 use App\Traits\GlobalConstant;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Http\JsonResponse;
@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class MediaService implements MediaServiceInterface
 {
-    use ApiResponser, GlobalConstant;
+    use ApiResponse, GlobalConstant;
 
     /**
      * @param string $bucketName
