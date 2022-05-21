@@ -23,8 +23,7 @@ class PostService implements PostServiceInterface
     public function __construct(
         PostRepositoryInterface $postRepository,
         CategoryRepositoryInterface $categoryRepository
-    )
-    {
+    ) {
         $this->postRepository = $postRepository;
         $this->categoryRepository = $categoryRepository;
     }

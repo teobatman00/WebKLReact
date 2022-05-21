@@ -54,6 +54,6 @@ class DbCreateCommand extends Command
 
     public function getPDOConnection($host, $port, string $username, string $password): PDO
     {
-        return new PDO(sprintf("mysql:host=%s;port=%d;",$host, $port), $username, $password);
+        return new PDO(sprintf("mysql:host=%s;port=%d;", $host, $port), $username, $password);
     }
 }

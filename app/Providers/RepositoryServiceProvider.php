@@ -24,7 +24,6 @@ class RepositoryServiceProvider extends ServiceProvider
             CategoryRepositoryInterface::class,
             CategoryRepository::class
         );
-
     }
 
     /**
