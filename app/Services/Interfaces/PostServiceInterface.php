@@ -9,4 +9,6 @@ interface PostServiceInterface
 {
 
     public function store(PostCreateRequest $requestOne);
+
+    public function update(\App\Dto\Request\Post\PostUpdateRequest $requestOne, string $id);
 }

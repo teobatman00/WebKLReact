@@ -11,21 +11,24 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class MediaService implements MediaServiceInterface
 {
     use ApiResponser, GlobalConstant;
 
     /**
-     * @throws BindingResolutionException
+     * @param string $bucketName
+     * @param string $objectName
+     * @return JsonResponse|BinaryFileResponse
      */
-    public function getMediaFile(string $bucketName, string $objectName) {
+    public function getMediaFile(string $bucketName, string $objectName): BinaryFileResponse|JsonResponse
+    {
         if (! Storage::disk('public')->exists($bucketName.'/'.$objectName)){
             Log::error(Lang::get(self::$exceptionNotFoundKey.'.file_object'));
             return $this->notFoundResponse(null, Lang::get(self::$exceptionNotFoundKey.'.file_object'));
         }
-
-        return response()->make(public_path().'/storage/'.$bucketName.'/'.$objectName);
+        return response()->download(public_path('/storage/'.$bucketName.'/'.$objectName));
     }
 
 

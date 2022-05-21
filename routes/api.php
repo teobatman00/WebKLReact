@@ -18,8 +18,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('posts')->name('posts.')->group(function(){
     Route::get('/', [PostController::class, 'index'])->name('index');
+    Route::post("/create", [PostController::class, 'store'])->name('store');
 });
 
 Route::prefix('media')->name('media.')->group(function(){
-    Route::get('public/{bucketName}/{objectName}', [MediaController::class, 'getMediaFile'])->name('get');
+    Route::get('public/{bucketName}/{objectName}', [MediaController::class, 'getMediaFile'])
+        ->name('get');
 });
