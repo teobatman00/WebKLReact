@@ -15,7 +15,8 @@ use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class MediaService implements MediaServiceInterface
 {
-    use ApiResponser, GlobalConstant;
+    use ApiResponser;
+    use GlobalConstant;
 
     /**
      * @param string $bucketName
@@ -24,16 +25,10 @@ class MediaService implements MediaServiceInterface
      */
     public function getMediaFile(string $bucketName, string $objectName): BinaryFileResponse|JsonResponse
     {
-        if (! Storage::disk('public')->exists($bucketName.'/'.$objectName)){
+        if (! Storage::disk('public')->exists($bucketName.'/'.$objectName)) {
             Log::error(Lang::get(self::$exceptionNotFoundKey.'.file_object'));
             return $this->notFoundResponse(null, Lang::get(self::$exceptionNotFoundKey.'.file_object'));
         }
         return response()->download(public_path('/storage/'.$bucketName.'/'.$objectName));
     }
-
-
-
-
-
-
 }

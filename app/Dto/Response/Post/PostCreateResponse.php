@@ -30,5 +30,4 @@ class PostCreateResponse extends DataTransferObject
             'categoryId' => $data['category_id']
         ]);
     }
-
 }
