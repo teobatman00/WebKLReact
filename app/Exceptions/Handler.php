@@ -53,10 +53,10 @@ class Handler extends ExceptionHandler
     public function render($request, Throwable $e): \Illuminate\Http\Response|\Illuminate\Http\JsonResponse|\Symfony\Component\HttpFoundation\Response
     {
         \Log::error($e->getMessage());
-        if ($e instanceof NotFoundDataException){
+        if ($e instanceof NotFoundDataException) {
             return $this->notFoundResponse(null, $e->getMessage());
         }
-        if ($e instanceof BadRequestException){
+        if ($e instanceof BadRequestException) {
             return $this->badRequestResponse(null, $e->getMessage());
         }
 

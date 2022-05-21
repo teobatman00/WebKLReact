@@ -8,7 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class PostRepository extends BaseRepository implements PostRepositoryInterface
 {
-
     protected $model = Post::class;
-
 }
