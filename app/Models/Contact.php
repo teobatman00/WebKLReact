@@ -32,5 +32,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Contact extends Model
 {
-    use HasFactory, Uuids;
+    use HasFactory;
+    use Uuids;
 }

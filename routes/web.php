@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('{path?}', WelcomeController::class)->where('path','[a-zA-Z0-9-/]+');
+Route::get('{path?}', WelcomeController::class)->where('path', '[a-zA-Z0-9-/]+');

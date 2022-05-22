@@ -19,7 +19,8 @@ class PostUpdateRequest extends DataTransferObject
     /**
      * @throws UnknownProperties
      */
-    public static function fromRequest(PostUpdateFormRequest $formRequest): PostUpdateRequest{
+    public static function fromRequest(PostUpdateFormRequest $formRequest): PostUpdateRequest
+    {
         return new static([
             'title' => $formRequest->input('title'),
             'excerpt' => $formRequest->input('excerpt'),

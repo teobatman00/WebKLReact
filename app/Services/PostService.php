@@ -27,8 +27,7 @@ class PostService implements PostServiceInterface
     public function __construct(
         PostRepositoryInterface $postRepository,
         CategoryRepositoryInterface $categoryRepository
-    )
-    {
+    ) {
         $this->postRepository = $postRepository;
         $this->categoryRepository = $categoryRepository;
     }
@@ -40,7 +39,7 @@ class PostService implements PostServiceInterface
     public function store(PostCreateRequest $requestOne): JsonResponse
     {
         $listCategory = [];
-        foreach ($requestOne->categories as $category){
+        foreach ($requestOne->categories as $category) {
             $categoryData = $this->categoryRepository->findOneByPrimary($category);
             if ($categoryData == null) {
                 throw new NotFoundDataException("Category not found");
@@ -65,7 +64,7 @@ class PostService implements PostServiceInterface
     public function index(\Illuminate\Http\Request $request): JsonResponse
     {
         $perPage = 15;
-        if ($request->get('perPage') != null){
+        if ($request->get('perPage') != null) {
             $perPage = $request->get('perPage');
         }
 
@@ -83,8 +82,9 @@ class PostService implements PostServiceInterface
         return $this->successResponse(PagePagination::createPage(
             content: $result,
             first: $data->currentPage(),
-            last: $data->lastPage(), totalElement: $data->total()
-        ),"Success");
+            last: $data->lastPage(),
+            totalElement: $data->total()
+        ), "Success");
     }
 
     /**

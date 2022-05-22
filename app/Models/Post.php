@@ -47,7 +47,9 @@ use LaravelFillableRelations\Eloquent\Concerns\HasFillableRelations;
  */
 class Post extends Model
 {
-    use HasFactory, Uuids, HasFillableRelations;
+    use HasFactory;
+    use Uuids;
+    use HasFillableRelations;
 
     protected $table = 'posts';
 
@@ -68,12 +70,12 @@ class Post extends Model
         'comments'
     ];
 
-    public function tags() : BelongsToMany
+    public function tags(): BelongsToMany
     {
         return $this->belongsToMany(Tag::class)->withTimestamps();
     }
 
-    public function categories() : BelongsToMany
+    public function categories(): BelongsToMany
     {
         return $this->belongsToMany(Category::class)->withTimestamps();
     }
@@ -87,5 +89,4 @@ class Post extends Model
     {
         return $this->hasMany(Comment::class);
     }
-
 }
