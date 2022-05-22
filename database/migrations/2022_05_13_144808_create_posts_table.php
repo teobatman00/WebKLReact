@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('slugs')->unique();
             $table->string('image_url');
             $table->boolean('published');
-            $table->timestamp('published_at');
+            $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });
     }

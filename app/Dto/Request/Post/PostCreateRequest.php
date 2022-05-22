@@ -11,10 +11,10 @@ class PostCreateRequest extends DataTransferObject
     public string $title;
     public string $excerpt;
     public string $content;
-    public string $slug;
+    public string $slugs;
     public string $image_url;
     public bool $published;
-    public string $category_id;
+    public array $categories;
 
     /**
      * @throws UnknownProperties
@@ -24,10 +24,10 @@ class PostCreateRequest extends DataTransferObject
             'title' => $formRequest->input('title'),
             'excerpt' => $formRequest->input('excerpt'),
             'content' => $formRequest->input('content'),
-            'slug' => $formRequest->input('slug'),
+            'slugs' => $formRequest->input('slug'),
             'image_url' => $formRequest->input('imageUrl'),
             'published' => $formRequest->input('published'),
-            'category_id' => $formRequest->input('categoryId')
+            'categories' => $formRequest->input('categoryId')
         ]);
     }
 

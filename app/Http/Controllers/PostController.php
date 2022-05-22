@@ -15,7 +15,6 @@ use Spatie\DataTransferObject\Exceptions\UnknownProperties;
 
 class PostController extends Controller
 {
-    use ApiResponse;
     private PostServiceInterface $postService;
 
 
@@ -27,11 +26,12 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @param Request $request
+     * @return JsonResponse
      */
-    public function index()
+    public function index(Request $request): JsonResponse
     {
-        //
+        return $this->postService->index($request);
     }
 
     /**
@@ -60,12 +60,12 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return Response
+     * @param string $id
+     * @return JsonResponse
      */
-    public function show($id)
+    public function show(string $id): JsonResponse
     {
-        //
+        return $this->postService->show($id);
     }
 
     /**

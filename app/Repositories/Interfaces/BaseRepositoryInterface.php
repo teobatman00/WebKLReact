@@ -10,7 +10,6 @@ use Illuminate\Support\Collection;
 interface BaseRepositoryInterface
 {
 
-    public function setModel(string $modelClass);
 
     public function setRequest(Request $request);
 

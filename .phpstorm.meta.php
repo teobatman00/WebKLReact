@@ -11,6 +11,10 @@ namespace PHPSTORM_META {
     */
     override(new \Illuminate\Contracts\Container\Container, map([
         '' => '@',
+            'App\Repositories\Interfaces\CategoryRepositoryInterface' => \App\Repositories\CategoryRepository::class,
+            'App\Repositories\Interfaces\PostRepositoryInterface' => \App\Repositories\PostRepository::class,
+            'App\Services\Interfaces\MediaServiceInterface' => \App\Services\MediaService::class,
+            'App\Services\Interfaces\PostServiceInterface' => \App\Services\PostService::class,
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
             'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
@@ -125,6 +129,8 @@ namespace PHPSTORM_META {
             'Illuminate\Testing\ParallelTesting' => \Illuminate\Testing\ParallelTesting::class,
             'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
             'Spatie\FlareClient\Flare' => \Spatie\FlareClient\Flare::class,
+            'Spatie\HttpLogger\LogProfile' => \Spatie\HttpLogger\LogNonGetRequests::class,
+            'Spatie\HttpLogger\LogWriter' => \Spatie\HttpLogger\DefaultLogWriter::class,
             'Spatie\Ignition\Config\IgnitionConfig' => \Spatie\Ignition\Config\IgnitionConfig::class,
             'Spatie\Ignition\Contracts\ConfigManager' => \Spatie\Ignition\Config\FileConfigManager::class,
             'Spatie\Ignition\Contracts\SolutionProviderRepository' => \Spatie\LaravelIgnition\Solutions\SolutionProviders\SolutionProviderRepository::class,
@@ -191,6 +197,10 @@ namespace PHPSTORM_META {
         ]));
     override(\Illuminate\Container\Container::makeWith(0), map([
         '' => '@',
+            'App\Repositories\Interfaces\CategoryRepositoryInterface' => \App\Repositories\CategoryRepository::class,
+            'App\Repositories\Interfaces\PostRepositoryInterface' => \App\Repositories\PostRepository::class,
+            'App\Services\Interfaces\MediaServiceInterface' => \App\Services\MediaService::class,
+            'App\Services\Interfaces\PostServiceInterface' => \App\Services\PostService::class,
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
             'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
@@ -305,6 +315,8 @@ namespace PHPSTORM_META {
             'Illuminate\Testing\ParallelTesting' => \Illuminate\Testing\ParallelTesting::class,
             'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
             'Spatie\FlareClient\Flare' => \Spatie\FlareClient\Flare::class,
+            'Spatie\HttpLogger\LogProfile' => \Spatie\HttpLogger\LogNonGetRequests::class,
+            'Spatie\HttpLogger\LogWriter' => \Spatie\HttpLogger\DefaultLogWriter::class,
             'Spatie\Ignition\Config\IgnitionConfig' => \Spatie\Ignition\Config\IgnitionConfig::class,
             'Spatie\Ignition\Contracts\ConfigManager' => \Spatie\Ignition\Config\FileConfigManager::class,
             'Spatie\Ignition\Contracts\SolutionProviderRepository' => \Spatie\LaravelIgnition\Solutions\SolutionProviders\SolutionProviderRepository::class,
@@ -371,6 +383,10 @@ namespace PHPSTORM_META {
         ]));
     override(\Illuminate\Contracts\Container\Container::get(0), map([
         '' => '@',
+            'App\Repositories\Interfaces\CategoryRepositoryInterface' => \App\Repositories\CategoryRepository::class,
+            'App\Repositories\Interfaces\PostRepositoryInterface' => \App\Repositories\PostRepository::class,
+            'App\Services\Interfaces\MediaServiceInterface' => \App\Services\MediaService::class,
+            'App\Services\Interfaces\PostServiceInterface' => \App\Services\PostService::class,
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
             'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
@@ -485,6 +501,8 @@ namespace PHPSTORM_META {
             'Illuminate\Testing\ParallelTesting' => \Illuminate\Testing\ParallelTesting::class,
             'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
             'Spatie\FlareClient\Flare' => \Spatie\FlareClient\Flare::class,
+            'Spatie\HttpLogger\LogProfile' => \Spatie\HttpLogger\LogNonGetRequests::class,
+            'Spatie\HttpLogger\LogWriter' => \Spatie\HttpLogger\DefaultLogWriter::class,
             'Spatie\Ignition\Config\IgnitionConfig' => \Spatie\Ignition\Config\IgnitionConfig::class,
             'Spatie\Ignition\Contracts\ConfigManager' => \Spatie\Ignition\Config\FileConfigManager::class,
             'Spatie\Ignition\Contracts\SolutionProviderRepository' => \Spatie\LaravelIgnition\Solutions\SolutionProviders\SolutionProviderRepository::class,
@@ -551,6 +569,10 @@ namespace PHPSTORM_META {
         ]));
     override(\Illuminate\Contracts\Container\Container::make(0), map([
         '' => '@',
+            'App\Repositories\Interfaces\CategoryRepositoryInterface' => \App\Repositories\CategoryRepository::class,
+            'App\Repositories\Interfaces\PostRepositoryInterface' => \App\Repositories\PostRepository::class,
+            'App\Services\Interfaces\MediaServiceInterface' => \App\Services\MediaService::class,
+            'App\Services\Interfaces\PostServiceInterface' => \App\Services\PostService::class,
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
             'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
@@ -665,6 +687,8 @@ namespace PHPSTORM_META {
             'Illuminate\Testing\ParallelTesting' => \Illuminate\Testing\ParallelTesting::class,
             'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
             'Spatie\FlareClient\Flare' => \Spatie\FlareClient\Flare::class,
+            'Spatie\HttpLogger\LogProfile' => \Spatie\HttpLogger\LogNonGetRequests::class,
+            'Spatie\HttpLogger\LogWriter' => \Spatie\HttpLogger\DefaultLogWriter::class,
             'Spatie\Ignition\Config\IgnitionConfig' => \Spatie\Ignition\Config\IgnitionConfig::class,
             'Spatie\Ignition\Contracts\ConfigManager' => \Spatie\Ignition\Config\FileConfigManager::class,
             'Spatie\Ignition\Contracts\SolutionProviderRepository' => \Spatie\LaravelIgnition\Solutions\SolutionProviders\SolutionProviderRepository::class,
@@ -731,6 +755,10 @@ namespace PHPSTORM_META {
         ]));
     override(\Illuminate\Contracts\Container\Container::makeWith(0), map([
         '' => '@',
+            'App\Repositories\Interfaces\CategoryRepositoryInterface' => \App\Repositories\CategoryRepository::class,
+            'App\Repositories\Interfaces\PostRepositoryInterface' => \App\Repositories\PostRepository::class,
+            'App\Services\Interfaces\MediaServiceInterface' => \App\Services\MediaService::class,
+            'App\Services\Interfaces\PostServiceInterface' => \App\Services\PostService::class,
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
             'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
@@ -845,6 +873,8 @@ namespace PHPSTORM_META {
             'Illuminate\Testing\ParallelTesting' => \Illuminate\Testing\ParallelTesting::class,
             'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
             'Spatie\FlareClient\Flare' => \Spatie\FlareClient\Flare::class,
+            'Spatie\HttpLogger\LogProfile' => \Spatie\HttpLogger\LogNonGetRequests::class,
+            'Spatie\HttpLogger\LogWriter' => \Spatie\HttpLogger\DefaultLogWriter::class,
             'Spatie\Ignition\Config\IgnitionConfig' => \Spatie\Ignition\Config\IgnitionConfig::class,
             'Spatie\Ignition\Contracts\ConfigManager' => \Spatie\Ignition\Config\FileConfigManager::class,
             'Spatie\Ignition\Contracts\SolutionProviderRepository' => \Spatie\LaravelIgnition\Solutions\SolutionProviders\SolutionProviderRepository::class,
@@ -911,6 +941,10 @@ namespace PHPSTORM_META {
         ]));
     override(\App::get(0), map([
         '' => '@',
+            'App\Repositories\Interfaces\CategoryRepositoryInterface' => \App\Repositories\CategoryRepository::class,
+            'App\Repositories\Interfaces\PostRepositoryInterface' => \App\Repositories\PostRepository::class,
+            'App\Services\Interfaces\MediaServiceInterface' => \App\Services\MediaService::class,
+            'App\Services\Interfaces\PostServiceInterface' => \App\Services\PostService::class,
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
             'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
@@ -1025,6 +1059,8 @@ namespace PHPSTORM_META {
             'Illuminate\Testing\ParallelTesting' => \Illuminate\Testing\ParallelTesting::class,
             'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
             'Spatie\FlareClient\Flare' => \Spatie\FlareClient\Flare::class,
+            'Spatie\HttpLogger\LogProfile' => \Spatie\HttpLogger\LogNonGetRequests::class,
+            'Spatie\HttpLogger\LogWriter' => \Spatie\HttpLogger\DefaultLogWriter::class,
             'Spatie\Ignition\Config\IgnitionConfig' => \Spatie\Ignition\Config\IgnitionConfig::class,
             'Spatie\Ignition\Contracts\ConfigManager' => \Spatie\Ignition\Config\FileConfigManager::class,
             'Spatie\Ignition\Contracts\SolutionProviderRepository' => \Spatie\LaravelIgnition\Solutions\SolutionProviders\SolutionProviderRepository::class,
@@ -1091,6 +1127,10 @@ namespace PHPSTORM_META {
         ]));
     override(\App::make(0), map([
         '' => '@',
+            'App\Repositories\Interfaces\CategoryRepositoryInterface' => \App\Repositories\CategoryRepository::class,
+            'App\Repositories\Interfaces\PostRepositoryInterface' => \App\Repositories\PostRepository::class,
+            'App\Services\Interfaces\MediaServiceInterface' => \App\Services\MediaService::class,
+            'App\Services\Interfaces\PostServiceInterface' => \App\Services\PostService::class,
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
             'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
@@ -1205,6 +1245,8 @@ namespace PHPSTORM_META {
             'Illuminate\Testing\ParallelTesting' => \Illuminate\Testing\ParallelTesting::class,
             'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
             'Spatie\FlareClient\Flare' => \Spatie\FlareClient\Flare::class,
+            'Spatie\HttpLogger\LogProfile' => \Spatie\HttpLogger\LogNonGetRequests::class,
+            'Spatie\HttpLogger\LogWriter' => \Spatie\HttpLogger\DefaultLogWriter::class,
             'Spatie\Ignition\Config\IgnitionConfig' => \Spatie\Ignition\Config\IgnitionConfig::class,
             'Spatie\Ignition\Contracts\ConfigManager' => \Spatie\Ignition\Config\FileConfigManager::class,
             'Spatie\Ignition\Contracts\SolutionProviderRepository' => \Spatie\LaravelIgnition\Solutions\SolutionProviders\SolutionProviderRepository::class,
@@ -1271,6 +1313,10 @@ namespace PHPSTORM_META {
         ]));
     override(\App::makeWith(0), map([
         '' => '@',
+            'App\Repositories\Interfaces\CategoryRepositoryInterface' => \App\Repositories\CategoryRepository::class,
+            'App\Repositories\Interfaces\PostRepositoryInterface' => \App\Repositories\PostRepository::class,
+            'App\Services\Interfaces\MediaServiceInterface' => \App\Services\MediaService::class,
+            'App\Services\Interfaces\PostServiceInterface' => \App\Services\PostService::class,
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
             'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
@@ -1385,6 +1431,8 @@ namespace PHPSTORM_META {
             'Illuminate\Testing\ParallelTesting' => \Illuminate\Testing\ParallelTesting::class,
             'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
             'Spatie\FlareClient\Flare' => \Spatie\FlareClient\Flare::class,
+            'Spatie\HttpLogger\LogProfile' => \Spatie\HttpLogger\LogNonGetRequests::class,
+            'Spatie\HttpLogger\LogWriter' => \Spatie\HttpLogger\DefaultLogWriter::class,
             'Spatie\Ignition\Config\IgnitionConfig' => \Spatie\Ignition\Config\IgnitionConfig::class,
             'Spatie\Ignition\Contracts\ConfigManager' => \Spatie\Ignition\Config\FileConfigManager::class,
             'Spatie\Ignition\Contracts\SolutionProviderRepository' => \Spatie\LaravelIgnition\Solutions\SolutionProviders\SolutionProviderRepository::class,
@@ -1451,6 +1499,10 @@ namespace PHPSTORM_META {
         ]));
     override(\app(0), map([
         '' => '@',
+            'App\Repositories\Interfaces\CategoryRepositoryInterface' => \App\Repositories\CategoryRepository::class,
+            'App\Repositories\Interfaces\PostRepositoryInterface' => \App\Repositories\PostRepository::class,
+            'App\Services\Interfaces\MediaServiceInterface' => \App\Services\MediaService::class,
+            'App\Services\Interfaces\PostServiceInterface' => \App\Services\PostService::class,
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
             'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
@@ -1565,6 +1617,8 @@ namespace PHPSTORM_META {
             'Illuminate\Testing\ParallelTesting' => \Illuminate\Testing\ParallelTesting::class,
             'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
             'Spatie\FlareClient\Flare' => \Spatie\FlareClient\Flare::class,
+            'Spatie\HttpLogger\LogProfile' => \Spatie\HttpLogger\LogNonGetRequests::class,
+            'Spatie\HttpLogger\LogWriter' => \Spatie\HttpLogger\DefaultLogWriter::class,
             'Spatie\Ignition\Config\IgnitionConfig' => \Spatie\Ignition\Config\IgnitionConfig::class,
             'Spatie\Ignition\Contracts\ConfigManager' => \Spatie\Ignition\Config\FileConfigManager::class,
             'Spatie\Ignition\Contracts\SolutionProviderRepository' => \Spatie\LaravelIgnition\Solutions\SolutionProviders\SolutionProviderRepository::class,
@@ -1631,6 +1685,10 @@ namespace PHPSTORM_META {
         ]));
     override(\resolve(0), map([
         '' => '@',
+            'App\Repositories\Interfaces\CategoryRepositoryInterface' => \App\Repositories\CategoryRepository::class,
+            'App\Repositories\Interfaces\PostRepositoryInterface' => \App\Repositories\PostRepository::class,
+            'App\Services\Interfaces\MediaServiceInterface' => \App\Services\MediaService::class,
+            'App\Services\Interfaces\PostServiceInterface' => \App\Services\PostService::class,
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
             'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
@@ -1745,6 +1803,8 @@ namespace PHPSTORM_META {
             'Illuminate\Testing\ParallelTesting' => \Illuminate\Testing\ParallelTesting::class,
             'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
             'Spatie\FlareClient\Flare' => \Spatie\FlareClient\Flare::class,
+            'Spatie\HttpLogger\LogProfile' => \Spatie\HttpLogger\LogNonGetRequests::class,
+            'Spatie\HttpLogger\LogWriter' => \Spatie\HttpLogger\DefaultLogWriter::class,
             'Spatie\Ignition\Config\IgnitionConfig' => \Spatie\Ignition\Config\IgnitionConfig::class,
             'Spatie\Ignition\Contracts\ConfigManager' => \Spatie\Ignition\Config\FileConfigManager::class,
             'Spatie\Ignition\Contracts\SolutionProviderRepository' => \Spatie\LaravelIgnition\Solutions\SolutionProviders\SolutionProviderRepository::class,
@@ -1811,6 +1871,10 @@ namespace PHPSTORM_META {
         ]));
     override(\Psr\Container\ContainerInterface::get(0), map([
         '' => '@',
+            'App\Repositories\Interfaces\CategoryRepositoryInterface' => \App\Repositories\CategoryRepository::class,
+            'App\Repositories\Interfaces\PostRepositoryInterface' => \App\Repositories\PostRepository::class,
+            'App\Services\Interfaces\MediaServiceInterface' => \App\Services\MediaService::class,
+            'App\Services\Interfaces\PostServiceInterface' => \App\Services\PostService::class,
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
             'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
@@ -1925,6 +1989,8 @@ namespace PHPSTORM_META {
             'Illuminate\Testing\ParallelTesting' => \Illuminate\Testing\ParallelTesting::class,
             'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
             'Spatie\FlareClient\Flare' => \Spatie\FlareClient\Flare::class,
+            'Spatie\HttpLogger\LogProfile' => \Spatie\HttpLogger\LogNonGetRequests::class,
+            'Spatie\HttpLogger\LogWriter' => \Spatie\HttpLogger\DefaultLogWriter::class,
             'Spatie\Ignition\Config\IgnitionConfig' => \Spatie\Ignition\Config\IgnitionConfig::class,
             'Spatie\Ignition\Contracts\ConfigManager' => \Spatie\Ignition\Config\FileConfigManager::class,
             'Spatie\Ignition\Contracts\SolutionProviderRepository' => \Spatie\LaravelIgnition\Solutions\SolutionProviders\SolutionProviderRepository::class,

@@ -25,18 +25,15 @@ abstract class BaseRepository implements BaseRepositoryInterface
 
     protected bool $exceptDefaultAttributes = true;
 
+    /**
+     * @throws BindingResolutionException
+     */
     public function __construct()
     {
         if ($this->model) {
-            $this->setModel($this->model);
+            $this->model = app()->make($this->model);
         }
         $this->setRequest(\request());
-    }
-
-    public function setModel(string $modelClass): BaseRepository
-    {
-        $this->model = app($modelClass);
-        return $this;
     }
 
     public function setRequest(Request $request): BaseRepository
@@ -203,7 +200,9 @@ abstract class BaseRepository implements BaseRepositoryInterface
 
     protected function getModelPrimaryFromArray(array $data)
     {
-        return $data[$this->getModel()->getKeyName()];
+        return array_key_exists($this->getModel()->getKeyName(), $data)
+            ? $data[$this->getModel()->getKeyName()]
+            : null;
     }
 
     protected function getModel(): Model

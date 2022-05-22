@@ -1,12 +1,15 @@
 <?php
 namespace App\Traits;
 
+use Carbon\Carbon;
+
 trait ApiResponse
 {
 
     private function baseResponse(bool $success, string $message, $data, int $code): \Illuminate\Http\JsonResponse
     {
         return response()->json([
+            'date' => Carbon::now()->toDateTimeString(),
             'success' => $success,
             'message' => $message,
             'data' => $data

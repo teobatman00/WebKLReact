@@ -32,7 +32,7 @@ class PostCreateFormRequest extends FormRequest
             'title' => 'required|min:5',
             'excerpt' => 'required|min:5',
             'content' => 'required|min:5',
-            'slug' => 'required',
+            'slug' => 'required|unique:posts,slugs',
             'imageUrl' => 'required',
             'published' => 'required',
             'categoryId' => 'required'

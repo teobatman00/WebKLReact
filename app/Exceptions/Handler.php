@@ -52,7 +52,8 @@ class Handler extends ExceptionHandler
 
     public function render($request, Throwable $e): \Illuminate\Http\Response|\Illuminate\Http\JsonResponse|\Symfony\Component\HttpFoundation\Response
     {
-        \Log::error($e->getMessage());
+
+        \Log::error("Code: {$e->getCode()}, {$e->getMessage()}");
         if ($e instanceof NotFoundDataException){
             return $this->notFoundResponse(null, $e->getMessage());
         }
@@ -60,8 +61,6 @@ class Handler extends ExceptionHandler
             return $this->badRequestResponse(null, $e->getMessage());
         }
 
-        return app()->environment('production')
-            ? $this->serverErrorResponse(null, $e->getMessage())
-            : parent::render($request, $e);
+        return $this->serverErrorResponse(null, "server_internal_error");
     }
 }

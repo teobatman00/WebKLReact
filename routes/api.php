@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('posts')->name('posts.')->group(function(){
-    Route::get('/', [PostController::class, 'index'])->name('index');
+    Route::get('/list', [PostController::class, 'index'])->name('index');
+    Route::get("/{id}", [PostController::class, 'show'])->name('show');
     Route::post("/create", [PostController::class, 'store'])->name('store');
 });
 

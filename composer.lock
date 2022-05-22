@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "be4e1b016f634f0ff4fd57fd9c0b9443",
+    "content-hash": "c6881f84e3daa2896f1fe4f68a4feb16",
     "packages": [
         {
             "name": "bensampo/laravel-enum",
@@ -6146,6 +6146,53 @@
             "time": "2021-12-08T09:12:39+00:00"
         },
         {
+            "name": "troelskn/laravel-fillable-relations",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/troelskn/laravel-fillable-relations.git",
+                "reference": "1bbc90a31fa42bdc49c85c365b70673af587ae56"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/troelskn/laravel-fillable-relations/zipball/1bbc90a31fa42bdc49c85c365b70673af587ae56",
+                "reference": "1bbc90a31fa42bdc49c85c365b70673af587ae56",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": ">=5.3"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.4",
+                "orchestra/database": "3.3.1",
+                "orchestra/testbench": "3.3",
+                "phpunit/phpunit": "~5.7"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "LaravelFillableRelations\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Troels Knak-Nielsen",
+                    "email": "troelskn@gmail.com"
+                }
+            ],
+            "description": "Provides HasFillableRelations trait to Eloquent models",
+            "support": {
+                "issues": "https://github.com/troelskn/laravel-fillable-relations/issues",
+                "source": "https://github.com/troelskn/laravel-fillable-relations/tree/master"
+            },
+            "time": "2021-10-29T14:50:44+00:00"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v5.4.1",
             "source": {
@@ -10029,7 +10076,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "troelskn/laravel-fillable-relations": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
