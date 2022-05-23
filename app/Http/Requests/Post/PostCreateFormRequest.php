@@ -35,7 +35,8 @@ class PostCreateFormRequest extends FormRequest
             'slug' => 'required|unique:posts,slugs',
             'imageUrl' => 'required',
             'published' => 'required',
-            'categoryId' => 'required'
+            'categoryId' => 'required',
+            'tagId' => 'required'
         ];
     }
 

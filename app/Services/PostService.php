@@ -12,6 +12,7 @@ use App\Models\Post;
 use App\Models\User;
 use App\Repositories\Interfaces\CategoryRepositoryInterface;
 use App\Repositories\Interfaces\PostRepositoryInterface;
+use App\Repositories\Interfaces\TagRepositoryInterface;
 use App\Services\Interfaces\PostServiceInterface;
 use App\Traits\ApiResponse;
 use Illuminate\Http\JsonResponse;
@@ -23,14 +24,17 @@ class PostService implements PostServiceInterface
 
     private PostRepositoryInterface $postRepository;
     private CategoryRepositoryInterface $categoryRepository;
+    private TagRepositoryInterface $tagRepository;
 
     public function __construct(
         PostRepositoryInterface $postRepository,
-        CategoryRepositoryInterface $categoryRepository
+        CategoryRepositoryInterface $categoryRepository,
+        TagRepositoryInterface $tagRepository
     )
     {
         $this->postRepository = $postRepository;
         $this->categoryRepository = $categoryRepository;
+        $this->tagRepository = $tagRepository;
     }
 
 
@@ -47,16 +51,53 @@ class PostService implements PostServiceInterface
             }
             $listCategory[] = $categoryData;
         }
+        $listTag = [];
+        foreach ($requestOne->tags as $tag){
+            $tagData = $this->tagRepository->findOneByPrimary($tag);
+            if ($tagData == null)
+                throw new NotFoundDataException("Tag not found");
+            $listTag[] = $tagData;
+        }
         $saveData = $requestOne->all();
         $saveData['categories'] = $listCategory;
-        \Log::info("Saving new category");
+        $saveData['tags'] = $listTag;
+        \Log::info("Saving new post");
         $this->postRepository->createOrUpdateFromArray($saveData);
         return $this->successResponse(null, "success");
     }
 
-    public function update(\App\Dto\Request\Post\PostUpdateRequest $requestOne, string $id)
+    /**
+     * @throws NotFoundDataException
+     */
+    public function update(\App\Dto\Request\Post\PostUpdateRequest $requestOne, string $id): JsonResponse
     {
-        // TODO: Implement update() method.
+        $existPost = $this->postRepository->findOneByPrimary($id, false);
+        if ($existPost == null){
+            throw new NotFoundDataException("Post not found");
+        }
+        $listCategory = [];
+        foreach ($requestOne->categories as $category){
+            $existCategory = $this->categoryRepository->findOneByPrimary($category);
+            if (! $existCategory){
+                throw new NotFoundDataException("Category not found");
+            }
+            $listCategory[] = $existCategory;
+        }
+        $listTag = [];
+        foreach ($requestOne->tags as $tag){
+            $existTag = $this->tagRepository->findOneByPrimary($tag);
+            if (! $existTag){
+                throw new NotFoundDataException("Tag not found");
+            }
+            $listTag[] = $existTag;
+        }
+        $updateData = $requestOne->all();
+        $updateData['id'] = $id;
+        $updateData['categories'] = $listCategory;
+        $updateData['tags'] = $listTag;
+        \Log::info("Updating post");
+        $this->postRepository->createOrUpdateFromArray($updateData);
+        return $this->successResponse(null, "success");
     }
 
     /**
