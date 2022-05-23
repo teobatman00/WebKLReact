@@ -26,5 +26,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 class PostMeta extends Model
 {
-    use HasFactory, Uuids;
+    use HasFactory;
+    use Uuids;
 }
