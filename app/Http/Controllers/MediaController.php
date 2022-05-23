@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Log;
 
 class MediaController extends Controller
 {
-
     private MediaServiceInterface $mediaService;
 
     public function __construct(MediaServiceInterface $mediaService)
@@ -17,9 +16,9 @@ class MediaController extends Controller
         $this->mediaService = $mediaService;
     }
 
-    public function getMediaFile(string $bucketName, string $objectName) {
+    public function getMediaFile(string $bucketName, string $objectName)
+    {
         Log::info("Getting file");
         return $this->mediaService->getMediaFile($bucketName, $objectName);
     }
-
 }

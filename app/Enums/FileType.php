@@ -11,6 +11,6 @@ use BenSampo\Enum\Enum;
  */
 final class FileType extends Enum
 {
-    const Image = "image";
-    const File = "file";
+    public const Image = "image";
+    public const File = "file";
 }

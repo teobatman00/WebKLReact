@@ -33,7 +33,6 @@ class RepositoryServiceProvider extends ServiceProvider
             TagRepositoryInterface::class,
             TagRepository::class
         );
-
     }
 
     /**
