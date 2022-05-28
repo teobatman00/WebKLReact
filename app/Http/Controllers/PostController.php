@@ -78,7 +78,7 @@ class PostController extends Controller
      * @param string $id
      * @return JsonResponse
      */
-    public function destroy(string $id):JsonResponse
+    public function destroy(string $id): JsonResponse
     {
         return $this->postService->destroy($id);
     }
