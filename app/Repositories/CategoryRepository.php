@@ -9,5 +9,4 @@ use Illuminate\Database\Eloquent\Model;
 class CategoryRepository extends BaseRepository implements CategoryRepositoryInterface
 {
     protected $model = Category::class;
-
 }

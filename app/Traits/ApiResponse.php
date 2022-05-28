@@ -1,11 +1,11 @@
 <?php
+
 namespace App\Traits;
 
 use Carbon\Carbon;
 
 trait ApiResponse
 {
-
     private function baseResponse(bool $success, string $message, $data, int $code): \Illuminate\Http\JsonResponse
     {
         return response()->json([
@@ -18,7 +18,7 @@ trait ApiResponse
 
     protected function successResponse($data, string $message): \Illuminate\Http\JsonResponse
     {
-        return $this->baseResponse (true,$message, $data, 200);
+        return $this->baseResponse(true, $message, $data, 200);
     }
 
     protected function badRequestResponse($data, string $message): \Illuminate\Http\JsonResponse
