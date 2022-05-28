@@ -139,4 +139,19 @@ class PostService implements PostServiceInterface
         $data['categories'] = $categories;
         return $this->successResponse(PostGetDetailResponse::fromData($data), "success");
     }
+
+    /**
+     * @throws NotFoundDataException
+     */
+    public function destroy(string $id): JsonResponse
+    {
+        $existData = $this->postRepository->findOneByPrimary($id);
+        if ($existData == null){
+            \Log::error("No post to delete");
+            throw new NotFoundDataException("No post to delete");
+        }
+        \Log::info("Deleting post {$id}");
+        $this->postRepository->deleteByPrimary($id);
+        return $this->successResponse(null, "Success");
+    }
 }

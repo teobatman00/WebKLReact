@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('tag_post', function (Blueprint $table) {
             $table->id();
-            $table->string('tag_id');
-            $table->string('post_id');
+            $table->foreignUuid('tag_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignUuid('post_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }

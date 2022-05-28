@@ -18,6 +18,7 @@ trait Uuids
         };
 
         static::creating($creationCallback);
+
     }
 
     public function getIncrementing(): bool
