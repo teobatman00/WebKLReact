@@ -33,7 +33,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class Comment extends Model
 {
-    use HasFactory, Uuids;
+    use HasFactory;
+    use Uuids;
 
     protected $table = 'comments';
 
@@ -63,8 +64,8 @@ class Comment extends Model
         return $this->hasMany(Comment::class, "parent_id");
     }
 
-    public function user(): BelongsTo{
+    public function user(): BelongsTo
+    {
         return $this->belongsTo(User::class);
     }
-
 }
