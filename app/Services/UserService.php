@@ -2,7 +2,9 @@
 
 namespace App\Services;
 
-class UserService
+use App\Services\Interfaces\UserServiceInterface;
+
+class UserService implements UserServiceInterface
 {
     public function __construct()
     {

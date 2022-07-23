@@ -2,7 +2,9 @@
 
 namespace App\Services;
 
-class CommentService
+use App\Services\Interfaces\CommentServiceInterface;
+
+class CommentService implements CommentServiceInterface
 {
     public function __construct()
     {

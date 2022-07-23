@@ -28,3 +28,11 @@ Route::prefix('media')->name('media.')->group(function(){
     Route::get('public/{bucketName}/{objectName}', [MediaController::class, 'getMediaFile'])
         ->name('get');
 });
+
+Route::prefix('category')->name('category.')->group(function (){
+    Route::get('/list', [\App\Http\Controllers\CategoryController::class, 'index'])->name('index');
+    Route::get('/{id}', [\App\Http\Controllers\CategoryController::class, 'show'])->name('show');
+    Route::post('/create', [\App\Http\Controllers\CategoryController::class, 'store'])->name('store');
+    Route::put('/{id}', [\App\Http\Controllers\CategoryController::class, 'update'])->name('update');
+    Route::delete('/{id}', [\App\Http\Controllers\CategoryController::class, 'destroy'])->name('delete');
+});
