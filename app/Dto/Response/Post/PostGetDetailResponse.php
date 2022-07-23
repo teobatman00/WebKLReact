@@ -21,7 +21,7 @@ class PostGetDetailResponse extends DataTransferObject
     public static function fromData($data): PostGetDetailResponse
     {
         $categoryList = [];
-        foreach ($data['categories'] as $item){
+        foreach ($data['categories'] as $item) {
             $appendList = [
                 'title' => $item['title'],
                 'slug' => $item['slugs']

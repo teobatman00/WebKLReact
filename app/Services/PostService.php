@@ -30,8 +30,7 @@ class PostService implements PostServiceInterface
         PostRepositoryInterface $postRepository,
         CategoryRepositoryInterface $categoryRepository,
         TagRepositoryInterface $tagRepository
-    )
-    {
+    ) {
         $this->postRepository = $postRepository;
         $this->categoryRepository = $categoryRepository;
         $this->tagRepository = $tagRepository;
@@ -44,7 +43,7 @@ class PostService implements PostServiceInterface
     public function store(PostCreateRequest $requestOne): JsonResponse
     {
         $listCategory = [];
-        foreach ($requestOne->categories as $category){
+        foreach ($requestOne->categories as $category) {
             $categoryData = $this->categoryRepository->findOneByPrimary($category);
             if ($categoryData == null) {
                 throw new NotFoundDataException("Category not found");
@@ -52,10 +51,11 @@ class PostService implements PostServiceInterface
             $listCategory[] = $categoryData;
         }
         $listTag = [];
-        foreach ($requestOne->tags as $tag){
+        foreach ($requestOne->tags as $tag) {
             $tagData = $this->tagRepository->findOneByPrimary($tag);
-            if ($tagData == null)
+            if ($tagData == null) {
                 throw new NotFoundDataException("Tag not found");
+            }
             $listTag[] = $tagData;
         }
         $saveData = $requestOne->all();
@@ -72,21 +72,21 @@ class PostService implements PostServiceInterface
     public function update(\App\Dto\Request\Post\PostUpdateRequest $requestOne, string $id): JsonResponse
     {
         $existPost = $this->postRepository->findOneByPrimary($id, false);
-        if ($existPost == null){
+        if ($existPost == null) {
             throw new NotFoundDataException("Post not found");
         }
         $listCategory = [];
-        foreach ($requestOne->categories as $category){
+        foreach ($requestOne->categories as $category) {
             $existCategory = $this->categoryRepository->findOneByPrimary($category);
-            if (! $existCategory){
+            if (! $existCategory) {
                 throw new NotFoundDataException("Category not found");
             }
             $listCategory[] = $existCategory;
         }
         $listTag = [];
-        foreach ($requestOne->tags as $tag){
+        foreach ($requestOne->tags as $tag) {
             $existTag = $this->tagRepository->findOneByPrimary($tag);
-            if (! $existTag){
+            if (! $existTag) {
                 throw new NotFoundDataException("Tag not found");
             }
             $listTag[] = $existTag;
@@ -106,7 +106,7 @@ class PostService implements PostServiceInterface
     public function index(\Illuminate\Http\Request $request): JsonResponse
     {
         $perPage = 15;
-        if ($request->get('perPage') != null){
+        if ($request->get('perPage') != null) {
             $perPage = $request->get('perPage');
         }
 
@@ -124,8 +124,9 @@ class PostService implements PostServiceInterface
         return $this->successResponse(PagePagination::createPage(
             content: $result,
             first: $data->currentPage(),
-            last: $data->lastPage(), totalElement: $data->total()
-        ),"Success");
+            last: $data->lastPage(),
+            totalElement: $data->total()
+        ), "Success");
     }
 
     /**
@@ -146,7 +147,7 @@ class PostService implements PostServiceInterface
     public function destroy(string $id): JsonResponse
     {
         $existData = $this->postRepository->findOneByPrimary($id);
-        if ($existData == null){
+        if ($existData == null) {
             \Log::error("No post to delete");
             throw new NotFoundDataException("No post to delete");
         }
