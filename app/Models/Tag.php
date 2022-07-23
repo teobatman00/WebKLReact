@@ -31,14 +31,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  */
 class Tag extends Model
 {
-    use HasFactory, Uuids;
+    use HasFactory;
+    use Uuids;
 
     protected $table = 'tags';
 
-    public function post() : BelongsToMany
+    public function post(): BelongsToMany
     {
         return $this->belongsToMany(Post::class)->withTimestamps();
     }
-
-
 }

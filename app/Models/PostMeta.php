@@ -27,7 +27,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class PostMeta extends Model
 {
-    use HasFactory, Uuids;
+    use HasFactory;
+    use Uuids;
 
     protected $table = 'post_metas';
 
@@ -40,7 +41,8 @@ class PostMeta extends Model
         'post'
     ];
 
-    public function post() : BelongsTo{
+    public function post(): BelongsTo
+    {
         return $this->belongsTo(Post::class);
     }
 }
