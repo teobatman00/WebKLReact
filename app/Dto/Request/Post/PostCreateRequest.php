@@ -15,6 +15,7 @@ class PostCreateRequest extends DataTransferObject
     public string $image_url;
     public bool $published;
     public array $categories;
+    public array $tags;
 
     /**
      * @throws UnknownProperties
@@ -27,7 +28,8 @@ class PostCreateRequest extends DataTransferObject
             'slugs' => $formRequest->input('slug'),
             'image_url' => $formRequest->input('imageUrl'),
             'published' => $formRequest->input('published'),
-            'categories' => $formRequest->input('categoryId')
+            'categories' => $formRequest->input('categoryId'),
+            'tags' => $formRequest->input('tagId')
         ]);
     }
 

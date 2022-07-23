@@ -15,4 +15,6 @@ interface PostServiceInterface
     public function index(\Illuminate\Http\Request $request);
 
     public function show(string $id);
+
+    public function destroy(string $id);
 }
