@@ -37,7 +37,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class Category extends Model
 {
-    use HasFactory, Uuids;
+    use HasFactory;
+    use Uuids;
 
     protected $table = 'categories';
 
@@ -53,7 +54,7 @@ class Category extends Model
         'parent'
     ];
 
-    public function posts() : BelongsToMany
+    public function posts(): BelongsToMany
     {
         return $this->belongsToMany(Post::class)->withTimestamps();
     }
@@ -67,5 +68,4 @@ class Category extends Model
     {
         return $this->hasMany(Category::class, "parent_id");
     }
-
 }

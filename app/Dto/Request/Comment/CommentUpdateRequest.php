@@ -6,11 +6,8 @@ use Spatie\DataTransferObject\DataTransferObject;
 
 class CommentUpdateRequest extends DataTransferObject
 {
-
     public function __construct()
     {
         //
     }
-
-
 }

@@ -6,7 +6,4 @@ use Spatie\DataTransferObject\DataTransferObject;
 
 class TagCreateRequest extends DataTransferObject
 {
-
-
-
 }
