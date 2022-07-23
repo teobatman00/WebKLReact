@@ -13,11 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('category_post', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->foreignUuid('category_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-            $table->foreignUuid('post_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-            $table->timestamps();
+        Schema::table('categories', function (Blueprint $table) {
+            $table->foreignUuid('parent_id')->references('id')->on('categories');
         });
     }
 
@@ -28,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('category_post');
+        Schema::table('categories', function (Blueprint $table) {
+            //
+        });
     }
 };

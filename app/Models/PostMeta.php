@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Traits\Uuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * App\Models\PostMeta
@@ -27,4 +28,19 @@ use Illuminate\Database\Eloquent\Model;
 class PostMeta extends Model
 {
     use HasFactory, Uuids;
+
+    protected $table = 'post_metas';
+
+    protected $fillable = [
+      'key',
+      'value'
+    ];
+
+    protected array $fillable_relations = [
+        'post'
+    ];
+
+    public function post() : BelongsTo{
+        return $this->belongsTo(Post::class);
+    }
 }

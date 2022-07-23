@@ -75,7 +75,9 @@ class Post extends Model
 
     public function categories() : BelongsToMany
     {
-        return $this->belongsToMany(Category::class)->withTimestamps();
+        return $this->belongsToMany(Category::class,
+            table: 'category_post',foreignPivotKey: 'post_id',relatedPivotKey: 'category_id'
+        )->withTimestamps();
     }
 
     public function post_metas(): HasMany

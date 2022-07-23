@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('category_post', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->foreignUuid('category_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-            $table->foreignUuid('post_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-            $table->timestamps();
+        Schema::table('comments', function (Blueprint $table) {
+            $table->foreignUuid('post_id')->constrained();
+            $table->foreignUuid('parent_id')->references('id')->on('comments');
+            $table->foreignUuid('user_id')->constrained();
         });
     }
 
@@ -28,6 +27,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('category_post');
+        Schema::table('comments', function (Blueprint $table) {
+            //
+        });
     }
 };

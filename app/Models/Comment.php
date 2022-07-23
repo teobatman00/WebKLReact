@@ -35,6 +35,19 @@ class Comment extends Model
 {
     use HasFactory, Uuids;
 
+    protected $table = 'comments';
+
+    protected $fillable = [
+      'title',
+      'content'
+    ];
+
+    protected array $fillable_relations = [
+        'post',
+        'children',
+        'parent'
+    ];
+
     public function post(): BelongsTo
     {
         return $this->belongsTo(Post::class);
@@ -50,5 +63,8 @@ class Comment extends Model
         return $this->hasMany(Comment::class, "parent_id");
     }
 
-    
+    public function user(): BelongsTo{
+        return $this->belongsTo(User::class);
+    }
+
 }

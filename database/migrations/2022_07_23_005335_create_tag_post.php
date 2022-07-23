@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('category_post', function (Blueprint $table) {
+        Schema::create('tag_post', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->foreignUuid('category_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignUuid('tag_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignUuid('post_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->timestamps();
         });
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('category_post');
+        Schema::dropIfExists('tag_post');
     }
 };

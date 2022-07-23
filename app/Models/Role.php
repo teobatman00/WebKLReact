@@ -31,6 +31,8 @@ class Role extends Model
 {
     use HasFactory, Uuids;
 
+    protected $table = 'roles';
+
     public function user(): HasMany
     {
         return $this->hasMany(User::class);

@@ -39,7 +39,21 @@ class Category extends Model
 {
     use HasFactory, Uuids;
 
-    public function post() : BelongsToMany
+    protected $table = 'categories';
+
+    protected $fillable = [
+        'title',
+        'slugs',
+        'description'
+    ];
+
+    protected array $fillable_relations = [
+        'posts',
+        'children',
+        'parent'
+    ];
+
+    public function posts() : BelongsToMany
     {
         return $this->belongsToMany(Post::class)->withTimestamps();
     }

@@ -33,6 +33,8 @@ class Tag extends Model
 {
     use HasFactory, Uuids;
 
+    protected $table = 'tags';
+
     public function post() : BelongsToMany
     {
         return $this->belongsToMany(Post::class)->withTimestamps();

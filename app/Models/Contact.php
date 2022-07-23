@@ -33,4 +33,16 @@ use Illuminate\Database\Eloquent\Model;
 class Contact extends Model
 {
     use HasFactory, Uuids;
+
+    protected $table = 'contacts';
+
+    protected $fillable = [
+      'name',
+      'email',
+      'phone_number',
+      'title',
+      'description'
+    ];
+
+
 }
