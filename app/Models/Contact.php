@@ -32,7 +32,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Contact extends Model
 {
-    use HasFactory, Uuids;
+    use HasFactory;
+    use Uuids;
 
     protected $table = 'contacts';
 
@@ -43,6 +44,4 @@ class Contact extends Model
       'title',
       'description'
     ];
-
-
 }

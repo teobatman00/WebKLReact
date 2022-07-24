@@ -20,7 +20,8 @@ class PostCreateRequest extends DataTransferObject
     /**
      * @throws UnknownProperties
      */
-    public static function fromRequest(PostCreateFormRequest $formRequest): PostCreateRequest{
+    public static function fromRequest(PostCreateFormRequest $formRequest): PostCreateRequest
+    {
         return new static([
             'title' => $formRequest->input('title'),
             'excerpt' => $formRequest->input('excerpt'),
@@ -32,5 +33,4 @@ class PostCreateRequest extends DataTransferObject
             'tags' => $formRequest->input('tagId')
         ]);
     }
-
 }

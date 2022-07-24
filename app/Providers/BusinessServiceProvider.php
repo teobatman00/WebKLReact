@@ -61,7 +61,6 @@ class BusinessServiceProvider extends ServiceProvider
             UserServiceInterface::class,
             UserService::class
         );
-
     }
 
     /**
