@@ -3,6 +3,7 @@ import React from "react";
 import { Desktop, Tablet, TabletAndAbove } from "../../MainApp";
 import { StarOutlined, LikeOutlined, MessageOutlined } from "@ant-design/icons";
 import styles from './BlogPage.module.css';
+import PostPage from "./sub-page/PostPage";
 
 const { Meta } = Card;
 
@@ -125,7 +126,7 @@ const BlogPage = () => {
             </Col>
             <Desktop>
                 <Col span={6}>
-                    <h1>Hello</h1>
+                    <PostPage />
                 </Col>
             </Desktop>
 

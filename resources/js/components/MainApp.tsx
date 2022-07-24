@@ -4,6 +4,7 @@ import AdminView from "./views/AdminView";
 import ClientView from "./views/ClientView";
 import "antd/dist/antd.css";
 import { useMediaQuery } from "react-responsive";
+import {PostService} from "../services/PostService";
 
 export function Desktop ({children}: any) {
   const isDesktop = useMediaQuery({minWidth: 992});
