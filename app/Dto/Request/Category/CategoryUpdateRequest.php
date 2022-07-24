@@ -6,5 +6,4 @@ use Spatie\DataTransferObject\DataTransferObject;
 
 class CategoryUpdateRequest extends DataTransferObject
 {
-
 }
