@@ -2,7 +2,10 @@
 
 namespace App\Http\Category;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Validation\ValidationException;
 
 class UpdateCategoryFormRequest extends FormRequest
 {
@@ -24,7 +27,16 @@ class UpdateCategoryFormRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required|min:5',
+            'slugs' => 'required'
         ];
+    }
+
+    protected function failedValidation(Validator $validator)
+    {
+        $error = (new ValidationException($validator))->errors();
+        throw new HttpResponseException($this->badRequestResponse([
+            'error' => $error
+        ], "Validation Error"));
     }
 }

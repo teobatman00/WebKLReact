@@ -29,4 +29,12 @@ use Illuminate\Database\Eloquent\Model;
 class Storage extends Model
 {
     use HasFactory, Uuids;
+
+    protected $table = 'storages';
+
+    protected $fillable = [
+        'name',
+        'url',
+        'file_type'
+    ];
 }

@@ -1,11 +1,11 @@
 import React from "react";
 
-const DashboardPage = () => {
+const ContactPage = () => {
     return (
         <>
 
         </>
-    );
+    )
 }
 
-export default DashboardPage;
+export default ContactPage
