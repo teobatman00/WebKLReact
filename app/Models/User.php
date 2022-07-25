@@ -55,7 +55,10 @@ use Laravel\Passport\HasApiTokens;
  */
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, Uuids;
+    use HasApiTokens;
+    use HasFactory;
+    use Notifiable;
+    use Uuids;
 
     /**
      * The attributes that are mass assignable.
@@ -105,7 +108,7 @@ class User extends Authenticatable
         return $this->hasMany(Post::class);
     }
 
-    public function comments():HasMany
+    public function comments(): HasMany
     {
         return $this->hasMany(Comment::class);
     }

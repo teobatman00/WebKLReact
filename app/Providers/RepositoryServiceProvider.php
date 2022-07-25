@@ -68,7 +68,6 @@ class RepositoryServiceProvider extends ServiceProvider
             UserRepositoryInterface::class,
             UserRepository::class
         );
-
     }
 
     /**

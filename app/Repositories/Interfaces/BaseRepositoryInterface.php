@@ -9,8 +9,6 @@ use Illuminate\Support\Collection;
 
 interface BaseRepositoryInterface
 {
-
-
     public function setRequest(Request $request);
 
     public function createOrUpdateMultipleFromRequest(

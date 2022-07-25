@@ -31,7 +31,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  */
 class Tag extends Model
 {
-    use HasFactory, Uuids;
+    use HasFactory;
+    use Uuids;
 
     protected $table = 'tags';
 
@@ -41,10 +42,8 @@ class Tag extends Model
       'description'
     ];
 
-    public function post() : BelongsToMany
+    public function post(): BelongsToMany
     {
         return $this->belongsToMany(Post::class)->withTimestamps();
     }
-
-
 }

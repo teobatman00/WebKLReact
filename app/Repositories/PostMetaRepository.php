@@ -8,5 +8,4 @@ use App\Repositories\Interfaces\PostMetaRepositoryInterface;
 class PostMetaRepository extends BaseRepository implements PostMetaRepositoryInterface
 {
     protected $model = PostMeta::class;
-
 }
